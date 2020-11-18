@@ -20,7 +20,6 @@ class App extends React.Component {
   render() {
     let loading = this.state.isWaiting ? <Spinner/> : null
     let error = this.state.error ? <ErrorMessage key={this.state.error.title} error={this.state.error} styleType="warning" /> : null
-    debugger
 
     return (<div>
       {loading}
@@ -50,7 +49,6 @@ class App extends React.Component {
         })
         this.tick(nextProps.query)
       }
-
   }
 
   componentDidMount() {
@@ -61,8 +59,6 @@ class App extends React.Component {
     });
 
     socket.on("tweet", (json) => {
-      console.log(json);
-
       if (json.data) {
         this.setTweets(json.data, json.query)
       }

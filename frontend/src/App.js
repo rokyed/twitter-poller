@@ -11,7 +11,6 @@ class App extends React.Component {
     this.onButtonClick = this.onButtonClick.bind(this);
   }
   onButtonClick(value) {
-    console.log("miau")
     this.setState({
       show: value
     })
@@ -20,7 +19,6 @@ class App extends React.Component {
     return (
       <div className="ui container">
         <div className="introduction"></div>
-
         <h1 className="ui header">
           <div className="content">
             Currently in query: {this.state.show}
